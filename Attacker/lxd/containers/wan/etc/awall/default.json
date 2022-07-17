@@ -1,0 +1,23 @@
+{
+  "description": "System Network Firewall",
+
+  "zone": {
+    "wan": { "iface": "wlan0" },
+    "man": { "iface": "eth0" },
+    "lan": { "iface": "eth1" },
+    "pwn": { "iface": "eth2" }
+  },
+
+  "policy": [
+    { "in": "_fw", "action": "accept" },
+    { "in": "man", "out": "wan", "action": "accept"},
+    { "in": "man", "out": "pwn", "action": "accept"},
+    { "in": "lan", "out": "wan", "action": "accept"},
+    { "in": "lan", "out": "pwn", "action": "accept"},
+    { "in": "pwn", "out": "wan", "action": "accept"}
+  ],
+
+  "snat": [
+    { "out": "wan" }
+  ]
+}

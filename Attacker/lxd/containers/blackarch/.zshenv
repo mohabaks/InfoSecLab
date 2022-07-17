@@ -1,0 +1,13 @@
+export GOPATH=$HOME/.go
+export PATH=$HOME/.local/bin:$GOPATH/bin:$PATH
+export GOPATH=$GOPATH:$HOME/Workspaces/Code/Go
+export QT_DEVICE_PIXEL_RATIO=
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export VISUAL=vim
+export EDITOR=vim
+export BROWSER=firefox
+export XDG_CONFIG_HOME="$HOME/.config"

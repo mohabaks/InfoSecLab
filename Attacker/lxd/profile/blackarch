@@ -1,0 +1,34 @@
+config: {}
+description: BlackArch LXD profile
+devices:
+  downloads:
+    path: /home/punisher/Downloads
+    source: /home/mohabaks/Downloads
+    type: disk
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: lxdbr2
+    type: nic
+  openvpn:
+    path: /home/punisher/.config/openvpn
+    source: /home/mohabaks/.config/openvpn
+    type: disk
+  root:
+    path: /
+    pool: default
+    type: disk
+  themes:
+    path: /usr/share/themes
+    source: /usr/share/themes
+    type: disk
+  tools:
+    path: /home/punisher/tools
+    source: /home/mohabaks/tools
+    type: disk
+  workspace:
+    path: /home/punisher/Workspace
+    source: /home/mohabaks/Workspace
+    type: disk
+name: blackarch
+used_by: []

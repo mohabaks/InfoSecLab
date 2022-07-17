@@ -1,0 +1,17 @@
+config:
+  security.nesting: "true"
+  security.syscalls.intercept.mknod: "true"
+  security.syscalls.intercept.setxattr: "true"
+description: LXD Docker Profile
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: br0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: docker
+used_by: []

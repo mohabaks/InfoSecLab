@@ -1,0 +1,12 @@
+# Commands
+alias sudo="doas"
+alias nmap="sudo nmap"
+alias masscan="sudo masscan"
+alias tcpdump="sudo tcpdump"
+alias openvpn="sudo openvpn"
+
+# Tshark
+alias tshark="tshark --color"
+
+# Misc
+alias getips='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'

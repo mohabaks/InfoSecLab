@@ -1,0 +1,63 @@
+#!/bin/sh
+
+burp_regs(){
+        echo -n "(^|^[^:]+:\/\/|[^\.]+\.)domain\.com$" | xclip -sel clip
+        echo "Successfully copied Burp Subdomains Regix to clipboard !!"
+}
+
+python_server(){
+        python -m http.server
+}
+
+ps1_cleanup(){
+        if [[ $# -eq 0 ]];then
+                echo -n "Usage: ps1_cleanup <file>"
+        else
+                echo "[+] Getting rid of unnecessary comments"
+                sed -i -e '/<#/,/#>/c\\' $1
+                echo "[+] Getting rid of unwanted space"
+                sed -i -e 's/^[[:space:]]*#.*$//g' $1
+        fi
+}
+
+private_ips(){
+        echo "List of Private IPs"
+        echo "-------------------"
+        printf "10.0.0.0/8: 10.0.0.0 – 10.255.255.255\n172.16.0.0/12: 172.16.0.0 – 172.31.255.255\n192.168.0.0/16: 192.168.0.0 – 192.168.255.255"
+        echo -e "\n---------------------"
+}
+
+python_ftpserver(){
+	sudo python -m pyftpdlib -p 21
+}
+
+pentest_dir(){
+	WORKSPACE=$(pwd)
+	mkdir -p ./{discovery/{hosts,services},documentation/{logs,screenshots},focused-penetration}
+}
+
+sync_date(){
+	if [[ $# -eq 0 ]];then
+		echo "Usage: sync_date <web_url>"
+		echo "Example"
+		echo "------"
+		echo "sync_date http://example.com"
+	else
+		doas date -s "$(curl -sI $1 |grep -i '^date:'|cut -d' ' -f2-)"
+	fi
+}
+
+png_magic(){
+	echo "Creating a fake image with magic bytes"
+	echo -n -e '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d\x49\x48\x44\x52' > out.png
+	echo "Successfully created out.png"
+}
+
+sha1_string(){
+        if [[ $# -eq 0 ]];then
+                echo "Usage: sha1_string <string>"
+        else
+                echo "$1" | sha1sum | awk '{print $1}' | xclip -sel clip 
+                echo "output copied to clipboard"
+        fi
+}
