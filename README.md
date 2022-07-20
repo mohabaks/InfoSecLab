@@ -31,7 +31,7 @@ The Network(s) are managed by [pfSense].
 
 # TODO
 
-|Task|Current Status|
+|Task(s)|Current Status|
 |----|-----|
 |Infrastructure as Code (IaC)|<ul><li>[x] [Ansible]</li><li>[ ] [Terraform]</li><li>[ ] [GitOps]</li><li>[ ] [Puppet]</li><li>[ ] [Vagrant]</li></ul>|
 |CI/CD|<ul><li>[ ] [Jenkins]</li><li>[ ] [GitLab]</li></ul>|
